@@ -1,0 +1,32 @@
+<section class="hero-banner">
+    {% if section.settings.image != blank %}
+        <img width="" height="" loading="lazy" src="{{ section.settings.image | image_url }}" alt="">
+    {% else %}
+        <img width="" height="" loading="lazy" srcset="{{ 'banner.webp' | asset_url }} 767w,
+           {{ 'banner@2x.webp' | asset_url }} 1024w,
+            {{ 'banner@3x.webp' | asset_url }} 1920w" src="{{ 'banner@3x.webp' | asset_url }}" alt="">
+    {% endif %}
+    <div class="hero-banner__text-wrap">
+        <p class="hero-banner__banner-text">Las mejores raquetas para jugar <span class="highlight">Tennis</span></p>
+        <a href="/pages/acerca-de" class="hero-banner__main-link">Acerca De Nosotros <span>&#8594;</span></a>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name":"Banner",
+    "settings":[
+        {
+            "type":"image_picker",
+            "id":"image",
+            "label":"pick image",
+            "info": "webp"
+        }
+    ],
+    "presets":[
+        {
+            "name":"banner"
+        }
+    ]
+}
+{% endschema %}

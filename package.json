@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "dev": "concurrently \"webpack --watch --color --progress=profile --mode=development --devtool=eval-cheap-module-source-map\" \"shopify theme dev\"",
+    "prod": "webpack --mode=production"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "css-loader": "^7.1.2",
+    "file-loader": "^6.2.0",
+    "less": "^4.2.0",
+    "less-loader": "^12.2.0",
+    "mini-css-extract-plugin": "^2.9.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
