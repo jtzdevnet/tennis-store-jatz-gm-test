@@ -3,9 +3,24 @@
         "banner":{
             "type":"banner",
             "settings":{}
+        },
+        "history": {
+            "type": "history",
+            "settings": {}
+        },
+        "product-slider": {
+            "type": "product-slider",
+            "settings": {}
+        },
+        "large-image":{
+            "type":"large-image",
+            "settings":{}
         }
     },
     "order":[
-        "banner"
+        "banner",
+        "history",
+        "product-slider",
+        "large-image"
     ]
 }

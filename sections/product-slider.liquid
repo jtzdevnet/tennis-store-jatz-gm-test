@@ -1,0 +1,28 @@
+<section class="product-slider">
+    <div class="product-slider__wrapper">
+        <div class="product-slider__description-block">
+            <h3 class="product-slider--title">Nuestras <span>Raquetas</span></h3>
+            <p class="product-slider--description">Conoce nuestras raquetas y aprende a jugar Tennis cómo un profesional.</p>
+        </div>
+        <div class="product-slider">
+            {% assign collection_handle = 'frontpage' %}
+            {% assign collection = collections[collection_handle] %}
+
+            {% if collection %}
+            <ul>
+                {% for product in collection.products %}
+                <li>
+                    <h2>{{ product.title }}</h2>
+                    <a href="{{ product.url }}">
+                    <img width="" height="" src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+                    </a>
+                    <p>{{ product.price | money }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No products found in this collection.</p>
+            {% endif %}
+        </div>
+    </div>
+</section>

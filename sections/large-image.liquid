@@ -1,0 +1,28 @@
+<section class="large-bottom-image">
+    {% if section.settings.image != blank %}
+        <img width="" height="" loading="lazy" src="{{ section.settings.image | image_url }}" alt="">
+    {% else %}
+        <img width="" height="" loading="lazy" srcset="{{ 'bottom-bg.webp' | asset_url }} 767w,
+           {{ 'bottom-bg@2x.webp' | asset_url }} 1024w,
+            {{ 'bottom-bg@2x.webp' | asset_url }} 1920w" src="{{ 'bottom-bg@2x.webp' | asset_url }}" alt="">
+    {% endif %}
+</section>
+
+{% schema %}
+{
+    "name":"LargeBottomImage",
+    "settings":[
+        {
+            "type":"image_picker",
+            "id":"image",
+            "label":"pick image",
+            "info": "webp"
+        }
+    ],
+    "presets":[
+        {
+            "name":"largebottomimage"
+        }
+    ]
+}
+{% endschema %}
