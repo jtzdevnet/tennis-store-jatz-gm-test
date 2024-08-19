@@ -601,8 +601,6 @@ header .header-langs a:last-child {
   width: 100%;
   align-self: stretch;
   background: #fff;
-  padding-top: 51px;
-  padding-bottom: 50px;
   padding-left: 30px;
   padding-right: 30px;
 }
@@ -611,7 +609,6 @@ header .header-langs a:last-child {
     width: calc(100% - 380px);
     padding-left: 52px;
     padding-right: 0;
-    padding-bottom: 0;
   }
 }
 @media (min-width: 992px) {
@@ -622,29 +619,32 @@ header .header-langs a:last-child {
 .product-slider__slider .products {
   overflow: hidden;
 }
-.product-slider__slider ul {
+.product-slider__slider #productSlider {
+  transition: 0.3s ease transform;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: flex-start;
   margin: 0;
   padding: 0;
+  padding-top: 51px;
+  padding-bottom: 50px;
   list-style: none;
   counter-reset: section;
 }
-.product-slider__slider ul li {
+.product-slider__slider #productSlider li {
   margin-right: 36px;
   position: relative;
 }
-.product-slider__slider ul li .product-link {
+.product-slider__slider #productSlider li .product-link {
   display: inline-block;
   position: relative;
 }
-.product-slider__slider ul li .product-link img {
+.product-slider__slider #productSlider li .product-link img {
   transition: 0.3s ease transform;
   max-width: 288px;
 }
-.product-slider__slider ul li .product-link:before {
+.product-slider__slider #productSlider li .product-link:before {
   transition: 0.3s ease opacity;
   content: "";
   position: absolute;
@@ -658,13 +658,13 @@ header .header-langs a:last-child {
   border-radius: 80px / 4px;
   opacity: 0;
 }
-.product-slider__slider ul li .product-link:hover img {
+.product-slider__slider #productSlider li .product-link:hover img {
   transform: translateY(-10px);
 }
-.product-slider__slider ul li .product-link:hover:before {
+.product-slider__slider #productSlider li .product-link:hover:before {
   opacity: 1;
 }
-.product-slider__slider ul li:before {
+.product-slider__slider #productSlider li:before {
   transition: 0.3s ease transform;
   counter-increment: section;
   content: counter(section);
@@ -684,7 +684,7 @@ header .header-langs a:last-child {
   pointer-events: none;
   z-index: 1;
 }
-.product-slider__slider ul li:hover:before {
+.product-slider__slider #productSlider li:hover:before {
   transform: translateY(-10px);
 }
 .large-bottom-image {

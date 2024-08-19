@@ -326,15 +326,13 @@
 		width: 100%;
 		align-self: stretch;
 		background: @white;
-		padding-top: 51px;
-		padding-bottom: 50px;
+		
 		padding-left: 30px;
 		padding-right: 30px;
 		@media(min-width: @sm-min){
 			width: calc(100% - 380px);
 			padding-left: 52px;
 			padding-right: 0;
-			padding-bottom: 0;
 		}
 		@media(min-width: @md-min){
 			width: calc(100% - 530px);
@@ -342,13 +340,16 @@
 		.products{
 			overflow: hidden;
 		}
-		ul{
+		#productSlider{
+			transition: 0.3s ease transform;
 			display: flex;
 			flex-flow: row nowrap;
 			justify-content: flex-start;
 			align-items: flex-start;
 			margin: 0;
 			padding: 0;
+			padding-top: 51px;
+			padding-bottom: 50px;
 			list-style: none;
 			counter-reset: section;
 			li{

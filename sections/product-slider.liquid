@@ -7,14 +7,18 @@
             <p class="product-slider--description">Conoce nuestras raquetas y aprende a jugar Tennis cómo un profesional.</p>
             <div class="product-slider__controls">
                 {% if collection %}
-                    <ul class="slider-indicators">
+                    <ul class="slider-indicators" data-target-slider="#productSlider">
                         {% for product in collection.products %}
-                            <li><a href=""></a></li>
+                            {% if forloop.index == 1 %}
+                                <li><a href="#" class="active" data-slide-to="{{ forloop.index }}"></a></li>
+                                {% else %}
+                                <li><a href="#" data-slide-to="{{ forloop.index }}"></a></li>
+                            {% endif %}
                         {% endfor %}
                     </ul>
-                    <div class="slider-controls">
-                        <a href="#" class="control-left"><span>&#9664;</span></a>
-                        <a href="#" class="control-right"><span>&#9654;</span></a>
+                    <div class="slider-controls" data-target-slider="#productSlider">
+                        <a href="#prev" class="control-left"><span>&#9664;</span></a>
+                        <a href="#next" class="control-right"><span>&#9654;</span></a>
                     </div>
                 {% else %}
                 {% endif %}
@@ -23,7 +27,7 @@
         <div class="product-slider__slider">
             <div class="products">
                 {% if collection %}
-                <ul>
+                <ul id="productSlider">
                     {% for product in collection.products %}
                     <li>
                         <a href="{{ product.url }}" class="product-link">
