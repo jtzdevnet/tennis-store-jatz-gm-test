@@ -1,28 +1,41 @@
+{% assign collection_handle = 'frontpage' %}
+{% assign collection = collections[collection_handle] %}
 <section class="product-slider">
     <div class="product-slider__wrapper">
         <div class="product-slider__description-block">
             <h3 class="product-slider--title">Nuestras <span>Raquetas</span></h3>
             <p class="product-slider--description">Conoce nuestras raquetas y aprende a jugar Tennis cómo un profesional.</p>
+            <div class="product-slider__controls">
+                {% if collection %}
+                    <ul class="slider-indicators">
+                        {% for product in collection.products %}
+                            <li><a href=""></a></li>
+                        {% endfor %}
+                    </ul>
+                    <div class="slider-controls">
+                        <a href="#" class="control-left"><span>&#9664;</span></a>
+                        <a href="#" class="control-right"><span>&#9654;</span></a>
+                    </div>
+                {% else %}
+                {% endif %}
+            </div>
         </div>
-        <div class="product-slider">
-            {% assign collection_handle = 'frontpage' %}
-            {% assign collection = collections[collection_handle] %}
-
-            {% if collection %}
-            <ul>
-                {% for product in collection.products %}
-                <li>
-                    <h2>{{ product.title }}</h2>
-                    <a href="{{ product.url }}">
-                    <img width="" height="" src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
-                    </a>
-                    <p>{{ product.price | money }}</p>
-                </li>
-                {% endfor %}
-            </ul>
-            {% else %}
-            <p>No products found in this collection.</p>
-            {% endif %}
+        <div class="product-slider__slider">
+            <div class="products">
+                {% if collection %}
+                <ul>
+                    {% for product in collection.products %}
+                    <li>
+                        <a href="{{ product.url }}" class="product-link">
+                            <img width="" height="" src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}">
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No products found in this collection.</p>
+                {% endif %}
+            </div>
         </div>
     </div>
 </section>
