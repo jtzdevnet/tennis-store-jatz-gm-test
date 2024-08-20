@@ -49,16 +49,17 @@
 		text-transform: uppercase;
 		width: 269px;
 		line-height: 51px;
-		padding-left: 30px;
+		padding-left: 29px;
 		border: solid 1px @white;
 		border-radius: 50px;
 		span{
 			transition: 0.3s ease transform;
 			display: inline-block;
 			position: relative;
-			top: 1px;
+			top: 3px;
 			font-size: 23px;
 			line-height: 23px;
+			font-family: none;
 		}
 		&:hover{
 			background:@white;
@@ -90,7 +91,7 @@
 	background: @gray-bg;
 	position: relative;
 	padding-top: 90px;
-	padding-bottom: 80px;
+	padding-bottom: 78px;
 	&__title-wrap {
 		position: relative;
 		display: flex;
@@ -188,6 +189,7 @@
 			font-size: 24px;
 			line-height: 23px;
 			margin-left: 62px;
+			font-family: none;
 		}
 
 		&:hover {
@@ -326,13 +328,16 @@
 		width: 100%;
 		align-self: stretch;
 		background: @white;
-		
-		padding-left: 30px;
-		padding-right: 30px;
+		max-width: 288px;
+		margin: 0 auto;
+		padding-left: 0;
+		padding-right: 0;
 		@media(min-width: @sm-min){
 			width: calc(100% - 380px);
 			padding-left: 52px;
 			padding-right: 0;
+			margin: 0;
+			max-width: none;
 		}
 		@media(min-width: @md-min){
 			width: calc(100% - 530px);

@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
   {{ content_for_header }}
-  {{ 'theme.css' | asset_url | stylesheet_tag }}
-  
+  {{ 'theme.min.css' | asset_url | stylesheet_tag }}
+  <title>Tennis Shop - Las mejores raquetas para jugar Tennis</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tennis Shop - Un sitio web dedicado a vender las mejores raquetas para jugar Tennis en México">
+  <link rel="shortcut icon" href="{{ "favicon.ico" | asset_url }}" type="image/x-icon">
 </head>
 <body>
   <header>{% section 'header' %}</header>

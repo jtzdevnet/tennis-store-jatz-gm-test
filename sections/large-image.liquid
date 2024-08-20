@@ -1,10 +1,10 @@
 <section class="large-bottom-image">
     {% if section.settings.image != blank %}
-        <img width="" height="" loading="lazy" src="{{ section.settings.image | image_url }}" alt="">
+        <img width="" height="" loading="lazy" src="{{ section.settings.image | image_url }}" alt="Cancha de tennis">
     {% else %}
         <img width="" height="" loading="lazy" srcset="{{ 'bottom-bg.webp' | asset_url }} 767w,
            {{ 'bottom-bg@2x.webp' | asset_url }} 1024w,
-            {{ 'bottom-bg@2x.webp' | asset_url }} 1920w" src="{{ 'bottom-bg@2x.webp' | asset_url }}" alt="">
+            {{ 'bottom-bg@2x.webp' | asset_url }} 1920w" src="{{ 'bottom-bg@2x.webp' | asset_url }}" alt="Cancha de tennis">
     {% endif %}
 </section>
 

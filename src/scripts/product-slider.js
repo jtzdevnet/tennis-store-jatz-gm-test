@@ -46,3 +46,24 @@ function calculateSlideSize(target){
 	const slideAmount = firstSlide.offsetWidth + slideMargin;
 	return slideAmount;
 }
+
+document.getElementById("productSlider").addEventListener('touchstart', function (event) {
+    touchstartX = event.changedTouches[0].screenX;
+}, false);
+
+document.getElementById("productSlider").addEventListener('touchend', function (event) {
+    touchendX = event.changedTouches[0].screenX;
+    handleGesture();
+}, false);
+
+
+function handleGesture() {
+    if (touchendX < touchstartX) {
+		document.querySelector('.slider-controls .control-right').click();
+    }
+
+    if (touchendX > touchstartX) {
+		document.querySelector('.slider-controls .control-left').click();
+    }
+
+}

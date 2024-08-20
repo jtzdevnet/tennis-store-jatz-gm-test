@@ -30,14 +30,14 @@
                 <ul id="productSlider">
                     {% for product in collection.products %}
                     <li>
-                        <a href="{{ product.url }}" class="product-link">
+                        <a href="{{ product.url }}" title="{{ product.title }}" class="product-link">
                             <img width="" height="" src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}">
                         </a>
                     </li>
                     {% endfor %}
                 </ul>
                 {% else %}
-                <p>No products found in this collection.</p>
+                <p>No hay productos disponibles por el momento.</p>
                 {% endif %}
             </div>
         </div>
